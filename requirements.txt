@@ -1,0 +1,15 @@
+asn1crypto==0.24.0
+configparser==3.5.0b2
+cryptography==2.6.1
+dbus-python==1.2.12
+entrypoints==0.3
+enum34==1.1.6
+ipaddress==1.0.17
+keyring==18.0.1
+keyrings.alt==3.1.1
+numpy==1.16.6
+pandas==0.24.2
+pycrypto==2.6.1
+python-dateutil==2.8.1
+
+
