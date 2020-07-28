@@ -1,6 +1,6 @@
 # Human-Emulator
 Inspired from MITRE human plugin.
-
+Works for Windows as well as Linux OS.
 Install requirements using requirements.txt. The human.py uses the aforementioned codes to emulate user actions based on 3 parameters.
 1. Clustersize: Max Number of clusters in the operations.
 2. Tasksize: Max Number of tasks in a cluster
@@ -8,7 +8,7 @@ Install requirements using requirements.txt. The human.py uses the aforementione
 4. Clusterinterval: Max Time in seconds before next cluster is started.
 
 Terminology:
- - Tasks: A User-action (eg. browse web, serach web, spawn shell)
+ - Tasks: A User-action (eg. browse web, search web, DNS lookup, spawn shell)
  - Cluster: A group of User Actions
  
  Execution:
