@@ -23,7 +23,7 @@ Returns :
 
 def emulation():
     try:
-        print(f"{platform.system()}")
+        # print(f"{platform.system()}")
         #if platform.system() == 'Linux':
         Numberofclusters = random.choice(range(args.numberofclusters + 1))
         print(f"Clusters : {Numberofclusters}")
@@ -37,10 +37,10 @@ def emulation():
 
 # noinspection PyInterpreter,PyInterpreter
 def task_manager(tasktime):
-    number_of_tasks = 4  # random.choice(range(3,args.numberoftasks + 1))
+    number_of_tasks = 4#random.choice(range(3,args.numberoftasks + 1))
     print(f"Tasks : {number_of_tasks}")
     if number_of_tasks >= 4:
-        if platform.system() == 'Linux':
+        if os.uname()[0] == 'Linux':
             t = Thread(target=start_dns_lookup_linux())
             task_handling.append(t)
             t1 = Thread(target=start_terminal_linux())
@@ -54,7 +54,7 @@ def task_manager(tasktime):
             t1.start()
             t2.start()
             t3.start()
-        if platform.system()=='Windows':
+        if os.uname()[0]=='Windows':
             t = Thread(target=start_dns_lookup_windows())
             task_handling.append(t)
             t1 = Thread(target=start_terminal_windows())
@@ -73,30 +73,30 @@ def task_manager(tasktime):
         # noinspection PyInterpreter
         choice = int(random.choice(range(1, 4)))
         if choice == 1:
-            if platform.system() == 'Linux':
+            if os.uname()[0] == 'Linux':
                 t = Thread(target=start_terminal_linux())
-            if platform.system() == 'Windows':
+            if os.uname()[0] == 'Windows':
                 t= Thread(target = start_terminal_windows())
             task_handling.append(t)
             t.start()
         elif choice == 2:
-            if platform.system()=='Linux':
+            if os.uname()[0]=='Linux':
                 t = Thread(target=start_dns_lookup_linux())
-            if platform.system() == 'Windows':
+            if os.uname()[0] == 'Windows':
                 t=Thread(target=start_dns_lookup_windows())
             task_handling.append(t)
             t.start()
         elif choice == 3:
-            if platform.system() == 'Linux':
+            if os.uname()[0] == 'Linux':
                 t = Thread(target=start_browsing_websites_linux())
-            if platform.system() == 'Windows':
+            if os.uname()[0] == 'Windows':
                 t= Thread(target=start_browsing_websites_windows())
             task_handling.append(t)
             t.start()
         elif choice == 4:
-            if platform.system() == 'Linux':
+            if os.uname()[0] == 'Linux':
                 t = Thread(target=start_browsing_google_linux())
-            if platform.system() == '':
+            if os.uname()[0] == '':
                 t=Thread(target=start_browsing_google_windows())
             task_handling.append(t)
             t.start()
