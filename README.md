@@ -21,11 +21,14 @@ This tool is highly valuable for Purple Teaming, SOC training, and validating in
 
 **Prerequisites:** Python 3.8+ and Google Chrome installed on your machine.
 1. Clone the repository:
+   
    `git clone [https://github.com/YourUsername/Human-Emulator.git](https://github.com/YourUsername/Human-Emulator.git)
    cd Human-Emulator`
 
 2. Install the required dependencies:
+ 
 ` pip install -r requirements.txt`
+
 (Note: The emulator utilizes webdriver-manager to automatically handle ChromeDriver installation based on your browser version.)
 
 
@@ -33,18 +36,25 @@ This tool is highly valuable for Purple Teaming, SOC training, and validating in
 The main entry point is emulator.py. You can execute it directly via Python or use the provided interactive bash script.
 
 ### Option 1: Interactive Execution (Linux/Mac)
-`chmod +x emulator.sh
-./emulator.sh`
+`chmod +x emulator.sh`
+`./emulator.sh`
 
 ### Option 2: Command Line Execution
 `python3 emulator.py --numberoftasks 5 --numberofclusters 3 --tasktime 10 --clustertime 30`
 
 
-ParametersArgumentDescriptionDefault--numberoftasksMaximum number of tasks to execute per cluster.5--numberofclustersMaximum number of clusters to run during the session.5--tasktimeMax wait time (in seconds) between individual tasks.10--clustertimeMax wait time (in seconds) between clusters.50
+## Parameters
+--numberofclustersMaximum number of clusters to run during the session.5--tasktimeMax wait time (in seconds) between individual tasks.10--clustertimeMax wait time (in seconds) between clusters.50
+| Argument | Description | Default |
+|----------|----------|----------|
+| --numberoftasks    | Maximum number of tasks to execute per cluster.   | 5   |
+| --numberofclusters    | Maximum number of clusters to run during the session.   | 5   |
+| --tasktimeMax    | Max wait time (in seconds) between individual tasks.   | 10   |
+| --clustertime    | Max wait time (in seconds) between clusters   | 50   |
 
 
 
-📁 Project Structure
+## 📁 Project Structure
 * emulator.py: The core orchestrator managing threads and clusters.
 
 * webdriver_helper.py: Wrapper for Selenium and ChromeDriver setup.
@@ -62,5 +72,5 @@ ParametersArgumentDescriptionDefault--numberoftasksMaximum number of tasks to ex
 * /data/: Contains target datasets (websites.txt, top500Domains.csv) for the browsing and DNS modules.
 
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This tool is designed strictly for educational purposes, authorized security testing, and defensive baseline generation.
